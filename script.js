@@ -7,6 +7,67 @@ const nomsJours = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"];
 
 let dateActuelle = new Date();
 
+// Récupérer les éléments de sélection de la date
+const selectMois = document.getElementById('select-mois');
+const selectAnnee = document.getElementById('select-annee');
+
+// Fonction pour remplir les listes déroulantes avec les mois et les années
+function remplirSelectDate() {
+    const dateActuelle = new Date();
+    const anneeActuelle = dateActuelle.getFullYear();
+    const moisActuel = dateActuelle.getMonth();
+
+    // Remplir la liste déroulante des mois
+    nomsMois.forEach((mois, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        option.text = mois;
+
+        // Désactiver les mois antérieurs au mois actuel pour l'année en cours
+        if (index < moisActuel && anneeActuelle === new Date().getFullYear()) {
+            option.disabled = true;
+        }
+
+        selectMois.appendChild(option);
+    });
+
+    // Remplir la liste déroulante des années (5 années avant et après l'année actuelle)
+    for (let i = anneeActuelle; i <= anneeActuelle + 5; i++) {
+        const option = document.createElement('option');
+        option.value = i;
+        option.text = i;
+
+        // Désactiver les années antérieures à l'année actuelle
+        if (i < anneeActuelle) {
+            option.disabled = true;
+        }
+
+        selectAnnee.appendChild(option);
+    }
+
+    // Sélectionner le mois et l'année actuels par défaut
+    selectMois.value = moisActuel;
+    selectAnnee.value = anneeActuelle;
+}
+
+// Appeler la fonction pour remplir les listes déroulantes au chargement de la page
+remplirSelectDate();
+
+// Ajouter des gestionnaires d'événements pour les changements de sélection
+selectMois.addEventListener('change', () => {
+    const mois = parseInt(selectMois.value);
+    const annee = parseInt(selectAnnee.value);
+    dateActuelle = new Date(annee, mois, 1);
+    afficherCalendrier(dateActuelle);
+});
+
+selectAnnee.addEventListener('change', () => {
+    const mois = parseInt(selectMois.value);
+    const annee = parseInt(selectAnnee.value);
+    dateActuelle = new Date(annee, mois, 1);
+    afficherCalendrier(dateActuelle);
+});
+
 function afficherCalendrier(date) {
     const premierJour = new Date(date.getFullYear(), date.getMonth(), 1);
     const dernierJour = new Date(date.getFullYear(), date.getMonth() + 1, 0);
