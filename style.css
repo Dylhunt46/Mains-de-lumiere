@@ -19,12 +19,63 @@ nav li {
     margin-right: 20px;
 }
 
-/* Styles pour le calendrier 
+/* Styles pour le calendrier */
 #calendrier {
-     Style pour le calendrier 
+    width: 300px;
+    border: 1px solid #ccc;
 }
 
- Styles pour le formulaire de contact ou message de confirmation
+#mois-courant {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#jours-semaine {
+    display: flex;
+}
+
+#jours-semaine div {
+    width: 40px;
+    text-align: center;
+    padding: 5px;
+}
+
+#grille-calendrier {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* Important: garder grid-template-columns */
+    grid-auto-rows: 1fr;
+    /* Permet aux lignes de s'adapter à la hauteur des cellules */
+}
+
+.ligne-calendrier {
+    display: contents;
+    /* flex-wrap: wrap; */
+    /* Les lignes utilisent flexbox pour aligner les jours */
+}
+
+#grille-calendrier div {
+    /* width: 40px; */
+    height: 40px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    /* Important: inclure les bordures et padding dans la taille */
+}
+
+#grille-calendrier div.jour-reserve {
+    background-color: #f0f0f0;
+    /* Style pour les jours réservés */
+    cursor: not-allowed;
+}
+
+#grille-calendrier div.jour-disponible {
+    cursor: pointer;
+}
+
+/*Styles pour le formulaire de contact ou message de confirmation
 #confirmation {
      Style pour le formulaire ou message 
 }*/
