@@ -4,6 +4,10 @@ body {
     padding: 0;
 }
 
+main {
+    margin: 20px;
+}
+
 header {
     background-color: #f0f0f0ff;
     padding: 20px;
@@ -19,10 +23,21 @@ nav li {
     margin-right: 20px;
 }
 
+#rdv {
+    display: grid;
+    place-items: center;
+    gap: 20px;
+}
+
 /* Styles pour le calendrier */
 #calendrier {
     width: 300px;
     border: 1px solid #ccc;
+
+}
+
+#selection-date {
+    text-align: center;
 }
 
 #mois-courant {
@@ -79,3 +94,7 @@ nav li {
 #confirmation {
      Style pour le formulaire ou message 
 }*/
+
+footer {
+    text-align: center;
+}
