@@ -22,7 +22,8 @@ header {
 }
 
 main {
-    margin: 20px;
+    width: 80%;
+    margin: 0 auto;
     color: #A55723;
     background-color: #FBDDC8;
 }
@@ -109,6 +110,10 @@ nav li {
 #confirmation {
      Style pour le formulaire ou message 
 }*/
+
+.reseau {
+    height: 20px;
+}
 
 footer {
     background-color: #FABE92;
