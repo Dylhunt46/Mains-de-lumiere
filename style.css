@@ -17,16 +17,20 @@ header {
 .header-logo {
     display: flex;
     justify-content: space-between;
+    background-color: #A65825;
+    color: #FBDDC8;
 }
 
 main {
     margin: 20px;
-
+    color: #A55723;
+    background-color: #FBDDC8;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    background-color: #FABE92;
 }
 
 nav li {
@@ -107,5 +111,7 @@ nav li {
 }*/
 
 footer {
+    background-color: #FABE92;
+    color: #A65825;
     text-align: center;
 }
