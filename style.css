@@ -39,6 +39,10 @@ nav li {
     margin-right: 20px;
 }
 
+.prestation {
+    background-color: #FABE92;
+}
+
 #rdv {
     display: grid;
     place-items: center;
